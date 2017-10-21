@@ -1,0 +1,4 @@
+dbhandle <- odbcDriverConnect('driver={ODBC Driver 13 for SQL Server};server=127.0.0.1;database=ncDHD;uid=sa;pwd=D@ta4All')
+res <- sqlQuery(dbhandle, 'select * from information_schema.tables')
+
+restaurants <- sqlQuery(dbhandle, 'select * from tblPermits where ptype in (\'Food Stand\', \'Restaurant\', \'Mobile Food Unit\', \'Mobile Food Units\')')
